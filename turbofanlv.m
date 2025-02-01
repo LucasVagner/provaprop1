@@ -5,6 +5,7 @@
 ideal       = 1;                % 1 para caso ideal e 0 para não ideal
 M_0         = 0.81;                % Mach de voo
 h           = 41500*0.3048;    % Altitude de voo (caso fornecida) --> Converteru de pés para metros
+dot_m0 = 755;
     [T_0, ~, P_0, ~] = atmosisa(h);
     % T_0 = 288 ;
     % P_0 = 101.3 ; 
@@ -13,7 +14,7 @@ h           = 41500*0.3048;    % Altitude de voo (caso fornecida) --> Converteru
 gamma_c    = 1.4;      % Razao dos calores especificos do ar no compressor
 cp_c        = 1.004;    % Calor especifico no compressor [kJ/kg.K]
 h_PR        = 43100;    % Poder calorífico do combustível [kJ/kg]
-pi_dmax     = 0.99;     % Razão de pressão no difusor %%%% FALTANDO
+pi_dmax     = 1;     % Razão de pressão no difusor %%%% FALTANDO
 
 
 if ideal
@@ -57,8 +58,8 @@ end
 pi_f        = 2.2;      % Fan total pressure ratio Pt13/Pt2 (aumentar diminui o consumo)
 pi_c        = 25;       % Razão de pressão no compressor    (aumentar diminui o consumo)
 pi_core     = pi_c/pi_f;  % Razão de pressão no core    
-alfa        = 2;       % Razão de bypass                   (aumentar diminui o consumo)
-Tt_4        = 1800;     % Temperatura na entrada da turbina (diminuir diminui o consumo)
+alfa        = 12;       % Razão de bypass                   (aumentar diminui o consumo)
+Tt_4        = 1773;     % Temperatura na entrada da turbina (diminuir diminui o consumo)
 
 g_c         = 1;        % Sistema imperial
 
@@ -76,7 +77,7 @@ g_c         = 1;        % Sistema imperial
 % eta_0     - Eficiencia total
 % eta_c     - Eficiencia do compressor
 % eta_t     - Eficiencia da turbina
-%
+% F [kN]
 
 %% Equations
 % Definições iniciais
@@ -226,7 +227,7 @@ T_9 = T9_T0*T_0;
 Tt_5 = tal_t*Tt_4;
 T_9y = Tt_5/((gamma_t+1)/2);
 V_9y = sqrt(gamma_t*R_t*1000*T_9y);
-F = F_dot_m0*755/1000; % [kN]
+F = F_dot_m0*dot_m0/1000; % [kN]
 
 % bypass ratio for the minimum fuel consumption
 alfa_star = (1 / (tal_r * (tal_f - 1))) * ...
