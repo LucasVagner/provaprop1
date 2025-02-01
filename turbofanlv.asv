@@ -2,7 +2,7 @@
 % Cálculo de motor turbofan ideal ou não-ideal
 
 %% Inputs
-ideal       = 1;                % 1 para caso ideal e 0 para não ideal
+ideal       = 0;                % 1 para caso ideal e 0 para não ideal
 M_0         = 0.81;                % Mach de voo
 h           = 41500*0.3048;    % Altitude de voo (caso fornecida) --> Converteru de pés para metros
     [T_0, ~, P_0, ~] = atmosisa(h);
@@ -31,27 +31,27 @@ if ideal
     e_f         = 1; 
 
 else
-    pi_b        = 0.98;         % Razão de pressão na camera de combustão
-    pi_n        = 1;         % Razão de pressão no bocal de saida        
+    pi_b        = 0.98;         % Razão de pressão na camera de combustão %%%% FALTANDO
+    pi_n        = 1;         % Razão de pressão no bocal de saida %%%% FALTANDO
     eta_n = pi_n;
-    pi_fn       = 1;         % Fan nozzle total pressure ratio Pt19/Pt13  
+    pi_fn       = 1;         % Fan nozzle total pressure ratio Pt19/Pt13 %%%% FALTANDO
     eta_fn = pi_fn;
     eta_d = 0.9;
-    eta_c = 0.89;            % Eficiencia total de compressão 
-    e_f         = 1;         % Eficiencia politropica do fan 
-    e_c         = 1;         % Eficiencia politrópica do compressor 
-    e_t         = 1;         % Eficiencia politrópica da turbina 
-    eta_b       = 0.98;      % Eficiencia da combustão 
-    eta_m       = 0.95;        % Eficiencia mecanica 
-    eta_f       = 0.91;         % Eficiencia do fan 
-    gamma_t    = 1.3;          % Razao dos calores especificos do ar na turbina 
-    cp_t        = 1.239;        % Calor especifico na turbina 
-    eta_t = 0.98;
+    eta_c = 0.89;            % Eficiencia total de compressão %%%% FALTANDO
+    e_f         = 1;         % Eficiencia politropica do fan %%%% FALTANDO
+    e_c         = 1;         % Eficiencia politrópica do compressor %%%% FALTANDO
+    e_t         = 1;         % Eficiencia politrópica da turbina %%%% FALTANDO
+    eta_b       = 0.98;      % Eficiencia da combustão %%%% FALTANDO
+    eta_m       = 0.95;        % Eficiencia mecanica %%%% FALTANDO
+    eta_f       = 0.91;         % Eficiencia do fan %%%% FALTANDO
+    gamma_t    = 1.3;          % Razao dos calores especificos do ar na turbina %%%% FALTANDO
+    cp_t        = 1.239;        % Calor especifico na turbina %%%% FALTANDO
+    eta_t = 0.98; %%%% FALTANDO
 end
 
 % Variáveis de controle
 
-pi_f        = 2.2;      % Fan total pressure ratio Pt13/Pt2 (aumentar diminui o consumo)
+pi_f        = 2.2;      % Fan total pressure ratio Pt13/Pt2 (aumentar diminui o consumo) %%%% FALTANDO
 pi_c        = 25;       % Razão de pressão no compressor    (aumentar diminui o consumo)
 pi_core     = pi_c/pi_f;  % Razão de pressão no core    
 alfa        = 12;       % Razão de bypass                   (aumentar diminui o consumo)
