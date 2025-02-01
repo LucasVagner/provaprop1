@@ -1,0 +1,10 @@
+Para Usar o git:
+Cria seus códigos e não mexe no dos outros
+
+pra atualizar:
+digita: 
+git pull
+git add -A
+git commit -m "atualizacao"
+git push
+
