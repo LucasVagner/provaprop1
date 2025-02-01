@@ -29,6 +29,9 @@ if ideal
     pi_fn       = 1;      % fan nozzle total pressure ratio Pt19/Pt13
     eta_fn = 1;
     e_f         = 1; 
+    eta_f = 1;
+    eta_c = 1;
+    eta_t = 1;
 
 else
     pi_b        = 0.98;         % Razão de pressão na camera de combustão
@@ -54,8 +57,8 @@ end
 pi_f        = 2.2;      % Fan total pressure ratio Pt13/Pt2 (aumentar diminui o consumo)
 pi_c        = 25;       % Razão de pressão no compressor    (aumentar diminui o consumo)
 pi_core     = pi_c/pi_f;  % Razão de pressão no core    
-alfa        = 12;       % Razão de bypass                   (aumentar diminui o consumo)
-Tt_4        = 1470;     % Temperatura na entrada da turbina (diminuir diminui o consumo)
+alfa        = 2;       % Razão de bypass                   (aumentar diminui o consumo)
+Tt_4        = 1800;     % Temperatura na entrada da turbina (diminuir diminui o consumo)
 
 g_c         = 1;        % Sistema imperial
 

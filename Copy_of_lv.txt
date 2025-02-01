@@ -1,0 +1,2 @@
+Caso o seu tenha dado algum erro de merge, ou vc vai na pasta e apaga todos os >>>> <<<< e a palavra HEAD
+e dê add -A, commit -m "a" e push denovo
