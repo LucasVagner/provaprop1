@@ -5,7 +5,7 @@
 ideal       = 1;                % 1 para caso ideal e 0 para não ideal
 M_0         = 0.81;                % Mach de voo
 h           = 41500*0.3048;    % Altitude de voo (caso fornecida) --> Converteru de pés para metros
-dot_m0 = 755;
+F = 73.5; % Força desejada kN
     [T_0, ~, P_0, ~] = atmosisa(h);
     % T_0 = 288 ;
     % P_0 = 101.3 ; 
@@ -227,7 +227,8 @@ T_9 = T9_T0*T_0;
 Tt_5 = tal_t*Tt_4;
 T_9y = Tt_5/((gamma_t+1)/2);
 V_9y = sqrt(gamma_t*R_t*1000*T_9y);
-F = F_dot_m0*dot_m0/1000; % [kN]
+% F = F_dot_m0*dot_m0/1000; % [kN]
+dot_m0 = F/F_dot_m0*1000;
 
 % bypass ratio for the minimum fuel consumption
 alfa_star = (1 / (tal_r * (tal_f - 1))) * ...
