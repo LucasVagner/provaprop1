@@ -133,7 +133,7 @@ tal_c       = pi_c^((gamma_c-1)/(gamma_c*e_c));
 % 7-52j
 tal_lambda  = cp_t*Tt_4/(cp_c*T_0);
 % 7-52o
-f           = (tal_lambda - tal_r*tal_c) / ((h_PR*eta_b / (cp_c*T_0)) - tal_lambda);
+f           = cp_c*T_0/h_PR*(tal_lambda-tal_r*tal_c);
 
 % Turbine (t)
 % 7-52p
